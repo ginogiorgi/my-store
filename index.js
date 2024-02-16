@@ -14,6 +14,11 @@ app.get('/products', (req, res) => {
     price: 1000,
   });
 });
+app.get('/categories', (req, res) => {
+  res.json({
+    name: 'furniture',
+  });
+});
 app.listen(port, () => {
   console.log('Mi port: ', port);
 });
