@@ -1,0 +1,28 @@
+{
+  "name": "my-store",
+  "version": "1.0.0",
+  "description": "Archivos utilizados en el Curso de Backend con Node.js: API REST con Express.js de Platzi. // Files used in the Backend with Node.js Course: REST API with Express.js by Platzi.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ginogiorgi/my-store.git"
+  },
+  "author": "Gino Ruben Giorgi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ginogiorgi/my-store/issues"
+  },
+  "homepage": "https://github.com/ginogiorgi/my-store#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "nodemon": "^3.0.3",
+    "prettier": "^3.2.5"
+  }
+}
