@@ -24,10 +24,19 @@ productsRouter.get('/filter', (req, res) => {
 });
 productsRouter.get(':id', (req, res) => {
   const { id } = req.params;
+
   res.json({
     id,
     name: 'Product 2',
     price: 1500,
+  });
+});
+productsRouter.post('/', (req, res) => {
+  const body = req.body;
+
+  res.json({
+    message: 'created',
+    data: body,
   });
 });
 
