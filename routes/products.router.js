@@ -22,19 +22,24 @@ productsRouter.get('/', (req, res) => {
 productsRouter.get('/filter', (req, res) => {
   res.send('Yo soy un filter');
 });
-productsRouter.get(':id', (req, res) => {
+productsRouter.get('/:id', (req, res) => {
   const { id } = req.params;
-
-  res.json({
-    id,
-    name: 'Product 2',
-    price: 1500,
-  });
+  if (id === '999') {
+    res.status(404).json({
+      message: 'Not found',
+    });
+  } else {
+    res.status(200).json({
+      id,
+      name: 'Product 2',
+      price: 1500,
+    });
+  }
 });
 productsRouter.post('/', (req, res) => {
   const body = req.body;
 
-  res.json({
+  res.status(201).json({
     message: 'created',
     data: body,
   });
