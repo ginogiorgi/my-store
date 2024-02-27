@@ -20,5 +20,5 @@ app.get('/', (req, res) => {
 routerApi(app);
 
 app.listen(port, () => {
-  console.log('Mi port: ', port);
+  console.log('Aplicacion lanzada en el puerto ', port);
 });
