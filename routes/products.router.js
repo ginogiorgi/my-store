@@ -13,10 +13,14 @@ productsRouter.get('/', async (req, res) => {
 productsRouter.get('/filter', (req, res) => {
   res.send('Yo soy un filter');
 });
-productsRouter.get('/:id', async (req, res) => {
-  const { id } = req.params;
-  const product = await service.findOne(id);
-  res.json(product);
+productsRouter.get('/:id', async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const product = await service.findOne(id);
+    res.json(product);
+  } catch (err) {
+    next(err);
+  }
 });
 productsRouter.post('/', async (req, res) => {
   const newProduct = await service.create(req.body);
