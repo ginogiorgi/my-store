@@ -6,7 +6,15 @@ const port = 3000;
 
 app.use(express.json());
 app.get('/', (req, res) => {
-  res.send('Hola mi server en express');
+  res.send(
+    `<h1 style="color:blue;text-align:center">
+    Hola mi server en express
+    <h1/>
+    <p style="color:green">
+    Probando cosas!
+    </p>
+    `,
+  );
 });
 
 routerApi(app);
