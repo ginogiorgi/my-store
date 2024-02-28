@@ -12,4 +12,15 @@ function errorHandler(err, req, res, next) {
   });
 }
 
-export { logErrors, errorHandler };
+function boomErrorHandler(err, req, res, next) {
+  console.log('Error');
+  if (err.isBoom) {
+    const { output } = err;
+
+    res.status(output.statusCode).json(output.payload);
+  } else {
+    next(err);
+  }
+}
+
+export { logErrors, errorHandler, boomErrorHandler };

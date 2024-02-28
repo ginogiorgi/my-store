@@ -27,16 +27,14 @@ productsRouter.post('/', async (req, res) => {
 
   res.status(201).json(newProduct);
 });
-productsRouter.patch('/:id', async (req, res) => {
+productsRouter.patch('/:id', async (req, res, next) => {
   try {
     const { id } = req.params;
     const product = await service.update(id, req.body);
 
     res.json(product);
   } catch (error) {
-    res.status(404).json({
-      message: error.message,
-    });
+    next(error);
   }
 });
 productsRouter.delete('/:id', async (req, res) => {

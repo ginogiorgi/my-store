@@ -1,6 +1,10 @@
 import express from 'express';
 import { routerApi } from './routes/index.js';
-import { errorHandler, logErrors } from './middlewares/error.handler.js';
+import {
+  boomErrorHandler,
+  errorHandler,
+  logErrors,
+} from './middlewares/error.handler.js';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as path from 'path';
@@ -18,6 +22,7 @@ app.get('/', function (req, res) {
 routerApi(app);
 
 app.use(logErrors);
+app.use(boomErrorHandler);
 app.use(errorHandler);
 
 app.listen(port, () => {
