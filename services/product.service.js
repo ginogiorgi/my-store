@@ -38,9 +38,9 @@ class ProductService {
   async findOne(id) {
     const product = this.products.find((item) => item.id === id);
     if (!product) {
-      throw Boom.notFound('product not found');
+      throw Boom.notFound('Product not found');
     } else if (product.isBlock) {
-      throw Boom.conflict('product is block');
+      throw Boom.conflict('Product is block');
     } else {
       return product;
     }
