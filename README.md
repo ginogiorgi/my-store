@@ -1,2 +1,3 @@
-# my-store
-Archivos utilizados en el Curso de Backend con Node.js: API REST con Express.js de Platzi. // Files used in the Backend with Node.js Course: REST API with Express.js by Platzi.
+<h1>Api v2 made by myself documentation</h1>
+<p>Hola!</p>
+<h1>Api v1 made in the course documentation</h1>
