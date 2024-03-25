@@ -8,7 +8,7 @@ const port = 3000;
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, './index.html'));
+  res.sendFile(path.join(__dirname, './README.md'));
 });
 app.listen(port, () => {
   console.log('Aplicacion ejecutandose en el puerto ' + port);
